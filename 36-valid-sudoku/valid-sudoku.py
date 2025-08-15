@@ -10,7 +10,6 @@ class Solution:
             for li in input_list:
                 counter = [0] * 10  # reset for each list
                 for num in li:
-                    if num != ".":  # skip empty cells
                         counter[int(num)] += 1
                         if counter[int(num)] > 1:
                             return False
