@@ -3,11 +3,15 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        for i in range(len(nums)):
-            for j in range(len(nums) - 1):
-                x = nums[j]
-                y = nums[j + 1]
-                if x > y:
-                    nums[j],nums[j + 1] = nums[j + 1],nums[j]
-        return nums
-            
+        l,r = 0,len(nums) - 1
+        i = 0
+        while i <= r:
+            if nums[i] == 0:
+                nums[i],nums[l] = nums[l],nums[i]
+                l += 1
+            elif nums[i] == 2:
+                nums[i],nums[r] = nums[r],nums[i]
+                r -= 1
+                i -= 1
+            i += 1
+        return nums           
