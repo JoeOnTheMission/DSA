@@ -3,15 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        seeker = 0
-        place_holder = 0
-        for i in range(len(nums)):
-            print(nums[i])
-            if nums[i] == 0:
-                place_holder = i
-                for j in range(i+1 , len(nums)):
-                    if nums[j] != 0:
-                        seeker = j
-                        nums[i],nums[j] = nums[j],nums[i]
-                        break
+        l = 0
+        for r in range(len(nums)):
+            if nums[r]:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
         return nums
