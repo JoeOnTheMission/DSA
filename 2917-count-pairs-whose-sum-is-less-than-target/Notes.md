@@ -1,1 +1,1 @@
-<h2>count-pairs-whose-sum-is-less-than-target Notes</h2><hr>[ Time taken: 31 m 14 s ]
+<h2>count-pairs-whose-sum-is-less-than-target Notes</h2><hr>[ Time taken: 1 m 14 s ]
