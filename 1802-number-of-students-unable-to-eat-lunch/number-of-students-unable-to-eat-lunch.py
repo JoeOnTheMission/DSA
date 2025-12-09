@@ -1,12 +1,19 @@
+from collections import deque
+
+
 class Solution:
-    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
-        while len(sandwiches)!= 0:
-            if sandwiches[0] == students[0]:
-                sandwiches.pop(0)
-                students.pop(0)
+    def countStudents(self, students: list[int], sandwiches: list[int]) -> int:
+        queue = deque(students)
+        current_sandwich_index = 0
+        search_times = 0
+        while queue:
+
+            current_student = queue.popleft()
+            if current_student != sandwiches[current_sandwich_index]:
+                queue.append(current_student)
+                search_times += 1
             else:
-                if sandwiches[0] not in students:
-                    return len(students)
-                students.append(students[0])
-                students.pop(0)
-        return 0
+                search_times = 0
+                current_sandwich_index += 1
+            if search_times >= len(queue):
+                return len(queue)
